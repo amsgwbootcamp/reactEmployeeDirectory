@@ -2,9 +2,8 @@ import React, { Component } from "react";
 // import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
+import SearchBox from "./components/SearchBox";
 // import friends from "./friends.json";
-
-const 
 
 class App extends Component {
   // Setting this.state.friends to the friends json array
@@ -24,6 +23,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Header>Employee Header</Header>
+        <SearchBox></SearchBox>
         {/* {this.state.friends.map(friend => (
           <FriendCard
             removeFriend={this.removeFriend}
