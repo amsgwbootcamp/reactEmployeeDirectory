@@ -1,0 +1,10 @@
+.img {
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
+    height: 60%;
+}  
+  
+.col {
+    display: inline-block;
+}
