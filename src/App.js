@@ -1,13 +1,9 @@
 import React from "react";
-// import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
 import Header from "./components/Header";
-//import SearchBox from "./components/SearchBox";
 import SearchResults from "./components/SearchResults";
 import employees from "./employees.json";
 import Container from "./components/Container";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Container, Row, Col } from "react-bootstrap"; 
 
 class App extends React.Component {
   //Setting this.state.employee to the employee json array
@@ -18,36 +14,25 @@ class App extends React.Component {
   };
 
   searchName = value => {
-    
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    // const friends = this.state.friends.filter(friend => friend.id !== id);
-    // // Set this.state.friends equal to the new friends array
-    // this.setState({ friends });
-    //console.log(value);
-    this.findName(this.state.employees,0,value);
-    // console.log(this.state.employees.indexOf(this.state.userInput) !==-1);
+    this.findName(this.state.employees, 0, value);
   };
 
   componentDidMount() {
     // API.getBaseBreedsList()
     this.setState({ employees: employees });
-    this.setState({ results: employees});
+    this.setState({ results: employees });
     // .catch(err => console.log(err));
   }
 
   findName(names, index, letter) {
-  
-    // var filteredNames = names.filter((word) => { 
-         
-    //      return word.name.charAt(index) === letter;
-    // });
     var filteredNames = [];
     names.forEach(name => {
-      if (name.name.startsWith(letter,0))
-      {
+      var checkName = name.name; 
+      var lowerName = checkName.toLowerCase();
+      if (lowerName.startsWith(letter.toLowerCase(), 0)) {
         filteredNames.push(name);
         console.log(name);
-      }  
+      }
     });
 
     this.setState({ results: filteredNames });
@@ -61,17 +46,8 @@ class App extends React.Component {
     this.setState({
       [name]: value
     });
-    //console.log(name);
-    //console.log(value);
     this.searchName(value);
   };
-
-  // filterEmployee = id => {
-  //   // Filter this.state.friends for friends with an id not equal to the id being removed
-  //   const employees = this.state.employees.filter(friend => friend.id !== id);
-  //   // Set this.state.friends equal to the new friends array
-  //   this.setState({ employees });
-  // };
 
   // Map over this.state.employees and render a Employee component for each Employee object
   render() {
@@ -92,12 +68,6 @@ class App extends React.Component {
               />
             </div>
           </form>
-          {/* <SearchBox>  */}
-          {/* handleFormSubmit={this.handleFormSubmit} */}
-          {/* handleInputChange={this.handleInputChange} */}
-          {/* employees={this.state.employees} */}
-          {/*    </SearchBox>  */}
-
           <SearchResults employees={this.state.results} />
         </Container>
       </Wrapper>
