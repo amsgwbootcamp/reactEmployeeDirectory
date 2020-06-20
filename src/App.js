@@ -116,8 +116,8 @@ class App extends React.Component {
   }
 
   ascComparePhone(a, b) {
-    var phoneA = a.phone; // ignore upper and lowercase
-    var phoneB = b.phone; // ignore upper and lowercase
+    var phoneA = a.phone;  
+    var phoneB = b.phone;  
     if (phoneA < phoneB) {
       return -1;
     }
@@ -129,8 +129,8 @@ class App extends React.Component {
   }
 
   descComparePhone(a, b) {
-    var phoneA = a.phone; // ignore upper and lowercase
-    var phoneB = b.phone; // ignore upper and lowercase
+    var phoneA = a.phone;  
+    var phoneB = b.phone;  
     if (phoneA < phoneB) {
       return 1;
     }
